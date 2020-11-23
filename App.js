@@ -34,36 +34,47 @@ const App = () => {
             </View>
 
             <View style={styles.infoMoovie}>
-              <Image
-                style={styles.poster}
-                source={require("./assets/poster.jpg")}
-              ></Image>
-              <Text style={[styles.infoText, styles.white]}>
-                A team of explore travel throught a wormhole in space in an
-                attempt to ensure humanity's survival
-              </Text>
+              <View>
+                <Image
+                  style={styles.poster}
+                  source={require("./assets/poster.jpg")}
+                ></Image>
+              </View>
+              <View style={styles.infoText}>
+                <Text style={[styles.white]}>
+                  A team of explore travel throught a wormhole in space in an
+                  attempt to ensure humanity's survival
+                </Text>
+
+                <TouchableOpacity>
+                  <Text style={[styles.buttonAdd, styles.white]}>
+                    {" "}
+                    <Entypo
+                      name="circle-with-plus"
+                      size={24}
+                      color="white"
+                    />{" "}
+                    ADD TO WATCHLIST
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View>
-            <TouchableOpacity>
-              <Text style={[styles.buttonAdd, styles.white]}>
-                {" "}
-                <Entypo name="circle-with-plus" size={24} color="white" /> ADD
-                TO WATCHLIST
-              </Text>
-            </TouchableOpacity>
             <View style={styles.allInfoStars}>
               <View style={styles.star1}>
                 <Entypo name="star" size={24} color="yellow" />
-                <Text>8,6/10</Text>
-                <Text style={styles.greyFin}>1,1M</Text>
+                <Text style={styles.white}>8,6/10</Text>
+                <Text style={[styles.greyFin, styles.white]}>1,1M</Text>
               </View>
               <View style={styles.star2}>
-                <Entypo name="star-outlined" size={24} color="black" />
-                <Text>RATE THIS</Text>
+                <Entypo name="star-outlined" size={24} color="white" />
+                <Text style={styles.white}>RATE THIS</Text>
               </View>
               <View style={styles.star3}>
-                <Text>74</Text>
-                <Text>Métascore</Text>
-                <Text style={styles.greyFin}>46 critics review</Text>
+                <Text style={styles.white}>74</Text>
+                <Text style={styles.white}>Métascore</Text>
+                <Text style={[styles.greyFin, styles.white]}>
+                  46 critics review
+                </Text>
               </View>
             </View>
           </View>
@@ -77,48 +88,58 @@ const App = () => {
                     style={styles.images}
                     source={require("./assets/acteur1.jpg")}
                   ></Image>
-                  <Text> Matthew McConaughey</Text>
-                  <Text style={styles.greyFin}>Joseph Cooper</Text>
+                  <Text style={styles.white}> Matthew McConaughey</Text>
+                  <Text style={[styles.greyFin, styles.white]}>
+                    Joseph Cooper
+                  </Text>
                 </View>
                 <View>
                   <Image
                     style={styles.images}
                     source={require("./assets/acteur2.png")}
                   ></Image>
-                  <Text> Anne Hathaway</Text>
-                  <Text style={styles.greyFin}>Amelia Brand</Text>
+                  <Text style={styles.white}> Anne Hathaway</Text>
+                  <Text style={[styles.greyFin, styles.white]}>
+                    Amelia Brand
+                  </Text>
                 </View>
                 <View>
                   <Image
                     style={styles.images}
                     source={require("./assets/acteur3.jpeg")}
                   ></Image>
-                  <Text> Jessica Chastain</Text>
-                  <Text style={styles.greyFin}>Murphy Cooper</Text>
+                  <Text style={styles.white}> Jessica Chastain</Text>
+                  <Text style={[styles.greyFin, styles.white]}>
+                    Murphy Cooper
+                  </Text>
                 </View>
-                <View>
+                <View style={styles.borderImages}>
                   <Image
                     style={styles.images}
                     source={require("./assets/acteur4.jpg")}
                   ></Image>
-                  <Text> Michael Caine</Text>
-                  <Text style={styles.greyFin}>Proffesseur John Brand</Text>
+                  <Text style={styles.white}> Michael Caine</Text>
+                  <Text style={[styles.greyFin, styles.white]}>
+                    Proffesseur John Brand
+                  </Text>
                 </View>
                 <View>
                   <Image
                     style={styles.images}
                     source={require("./assets/acteur5.jpg")}
                   ></Image>
-                  <Text> Mackenzie Foy</Text>
-                  <Text style={styles.greyFin}>Murphy Cooper</Text>
+                  <Text style={styles.white}> Mackenzie Foy</Text>
+                  <Text style={[styles.greyFin, styles.white]}>
+                    Murphy Cooper
+                  </Text>
                 </View>
               </View>
             </ScrollView>
             <View style={styles.director}>
               <Text style={[styles.white, styles.h2]}> Director</Text>
-              <Text>Christopher Nolan</Text>
+              <Text style={styles.white}>Christopher Nolan</Text>
               <Text style={[styles.white, styles.h2]}> Writters</Text>
-              <Text>
+              <Text style={styles.white}>
                 Jonathan Nolan Says His Original Ending To 'Interstellar' Was
                 “Much More Straightforward” | IndieWire
               </Text>
@@ -138,26 +159,28 @@ const styles = StyleSheet.create({
     // prend en compte la taille des encoches
   },
   container1: {
-    backgroundColor: "grey",
+    backgroundColor: "#212121",
     paddingLeft: 5,
     paddingRight: 5,
     marginBottom: 20,
   },
 
   container2: {
-    backgroundColor: "grey",
+    backgroundColor: "#212121",
     paddingLeft: 5,
     paddingRight: 5,
   },
   header: {
     height: 70,
-    backgroundColor: "black",
+    backgroundColor: "#393939",
   },
   logo: {
     marginTop: 12,
     height: 50,
     width: 150,
     resizeMode: "cover",
+    borderRadius: 10,
+    marginLeft: 5,
   },
 
   white: {
@@ -193,6 +216,7 @@ const styles = StyleSheet.create({
   infoText: {
     flex: 1,
     justifyContent: "center",
+    paddingLeft: 5,
   },
   buttonAdd: {
     backgroundColor: "#0477BD",
@@ -220,6 +244,11 @@ const styles = StyleSheet.create({
   gallery: {
     flex: 1,
     flexDirection: "row",
+  },
+  borderImages: {
+    borderWidth: 4,
+    borderColor: "#20232a",
+    borderRadius: 6,
   },
 
   // INFO WRITTER
